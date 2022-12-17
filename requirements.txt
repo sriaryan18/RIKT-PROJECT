@@ -1,0 +1,7 @@
+pydub
+wavio
+transformers
+SpeechRecognition
+pyaudio
+scipy
+sounddevice
