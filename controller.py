@@ -14,9 +14,11 @@ mlModel=MLMODEL.model(model_name, classifier)
 def getEmotionText():
     data=request.json
     # process the data
+    res=[]
     print(data)
-    res=mlModel.get_prediction(data['text1'])
-    print(res)
+    for keys in data.keys():
+        print(data[keys])
+        res.append(mlModel.get_prediction(data[keys]))
 
 
 
@@ -26,3 +28,6 @@ def getEmotionText():
 @app.route('/')
 def hello():
     return 'Hello, World!'
+
+if __name__ == '__main__':
+      app.run(host='127.0.0.1', port=3003,debug=True)
